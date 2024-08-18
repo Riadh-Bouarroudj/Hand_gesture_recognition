@@ -20,7 +20,7 @@ global path; path=""
 global conn
 
 current_directory = os.path.dirname(__file__)
-conn=sqlite3.connect(os.path.join(current_directory,'Files/Database.db')) 
+conn=sqlite3.connect(os.path.join(current_directory,'files/Database.db')) 
 c=conn.cursor()
 c.execute("SELECT * FROM IMAGE where ID=?", (idi, ))
 rows=c.fetchall()
@@ -62,8 +62,8 @@ def Starting(par=0) :
         exit()
     else:
         chemin=""
-        cnn=models.load_model(os.path.join(current_directory, 'Files/CNNmodel_v1.h5'))
-        lstm=models.load_model(os.path.join(current_directory, 'Files/LSTMmodel_v1.h5'))
+        cnn=models.load_model(os.path.join(current_directory, 'files/CNNmodel_v1.h5'))
+        lstm=models.load_model(os.path.join(current_directory, 'files/LSTMmodel_v1.h5'))
 
         modelfeatures= models.Model(
             inputs=cnn.input,
@@ -296,7 +296,7 @@ def Action(idi,classe="",page=0 ):
         for i in range(0,7):
             listeBDD.append(row[i])
             
-    with open (os.path.join(current_directory, 'Files/picture.jpg'),'wb') as f :
+    with open (os.path.join(current_directory, 'files/picture.jpg'),'wb') as f :
         f.write(listeBDD[1])   
     conn.commit()
     c.close()
@@ -416,7 +416,7 @@ def Action(idi,classe="",page=0 ):
         ui.button_4.setText("Saves : "+str(listeBDD[5]))
         ui.button_5.setText("Points : "+str(listeBDD[6]))
         
-        pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+        pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
         ui.photo.setPixmap(pixmap)
         Color_button(user,idi,1)
     else:
@@ -426,7 +426,7 @@ def Action(idi,classe="",page=0 ):
         ui.pushButton_4.setText("Saves : "+str(listeBDD[5]))
         ui.pushButton_5.setText("Points : "+str(listeBDD[6]))
         
-        pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+        pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
         ui.photo_2.setPixmap(pixmap)  
         Color_button(user,idi,2)
  
@@ -563,7 +563,7 @@ def Profil_init():
     ui.pushButton_4.setStyleSheet("background-color : None")
     ui.pushButton_5.setStyleSheet("background-color : None")
     
-    pixmap = QPixmap(os.path.join(current_directory, 'Files/Black_picture.jpg'))
+    pixmap = QPixmap(os.path.join(current_directory, 'files/Black_picture.jpg'))
     ui.photo_2.setPixmap(pixmap)     
     ui.tabWidget.setCurrentIndex(2)     
   
@@ -597,7 +597,7 @@ def User_Like():
             for i in range(0,7):
                 listeBDD.append(row[i])
                 
-        with open (os.path.join(current_directory, 'Files/picture.jpg'),'wb') as f :
+        with open (os.path.join(current_directory, 'files/picture.jpg'),'wb') as f :
             f.write(listeBDD[1])   
         d.close()
         
@@ -607,7 +607,7 @@ def User_Like():
         ui.pushButton_4.setText("Saves : "+str(listeBDD[5]))
         ui.pushButton_5.setText("Points : "+str(listeBDD[6]))
         
-        pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+        pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
         ui.photo_2.setPixmap(pixmap)
         Color_button(user,liste[xx],2)
 
@@ -641,7 +641,7 @@ def User_Dislike():
             for i in range(0,7):
                 listeBDD.append(row[i])
                 
-        with open (os.path.join(current_directory, 'Files/picture.jpg'),'wb') as f :
+        with open (os.path.join(current_directory, 'files/picture.jpg'),'wb') as f :
             f.write(listeBDD[1])   
         d.close()
         
@@ -651,7 +651,7 @@ def User_Dislike():
         ui.pushButton_4.setText("Saves : "+str(listeBDD[5]))
         ui.pushButton_5.setText("Points : "+str(listeBDD[6]))
         
-        pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+        pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
         ui.photo_2.setPixmap(pixmap)
         Color_button(user,liste[xx],2)
 
@@ -685,7 +685,7 @@ def User_Ok():
             for i in range(0,7):
                 listeBDD.append(row[i])
                 
-        with open (os.path.join(current_directory, 'Files/picture.jpg'),'wb') as f :
+        with open (os.path.join(current_directory, 'files/picture.jpg'),'wb') as f :
             f.write(listeBDD[1])   
         d.close()
         
@@ -695,7 +695,7 @@ def User_Ok():
         ui.pushButton_4.setText("Saves : "+str(listeBDD[5]))
         ui.pushButton_5.setText("Points : "+str(listeBDD[6]))
         
-        pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+        pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
         ui.photo_2.setPixmap(pixmap)  
         Color_button(user,liste[xx],2)
 
@@ -729,7 +729,7 @@ def User_Save():
             for i in range(0,7):
                 listeBDD.append(row[i])
                 
-        with open (os.path.join(current_directory, 'Files/picture.jpg'),'wb') as f :
+        with open (os.path.join(current_directory, 'files/picture.jpg'),'wb') as f :
             f.write(listeBDD[1])   
         d.close()
         
@@ -739,7 +739,7 @@ def User_Save():
         ui.pushButton_4.setText("Saves : "+str(listeBDD[5]))
         ui.pushButton_5.setText("Points : "+str(listeBDD[6]))
         
-        pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+        pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
         ui.photo_2.setPixmap(pixmap) 
         Color_button(user,liste[xx],2)
         
@@ -773,7 +773,7 @@ def User_Point():
             for i in range(0,7):
                 listeBDD.append(row[i])
                 
-        with open (os.path.join(current_directory, 'Files/picture.jpg'),'wb') as f :
+        with open (os.path.join(current_directory, 'files/picture.jpg'),'wb') as f :
             f.write(listeBDD[1])   
         d.close()
         
@@ -783,7 +783,7 @@ def User_Point():
         ui.pushButton_4.setText("Saves : "+str(listeBDD[5]))
         ui.pushButton_5.setText("Points : "+str(listeBDD[6]))
         
-        pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+        pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
         ui.photo_2.setPixmap(pixmap) 
         Color_button(user,liste[xx],2)        
               
@@ -822,13 +822,13 @@ def User_right():
 
     
 app = QApplication(sys.argv)
-ui = uic.loadUi(os.path.join(current_directory, 'Files/Interface.ui'))
+ui = uic.loadUi(os.path.join(current_directory, 'files/Interface.ui'))
 ui.tabWidget.setCurrentIndex(0)
 
 for row in rows:
     for i in range(0,7):
         listeBDD.append(row[i])        
-with open (os.path.join(current_directory, 'Files/picture.jpg'),'wb') as f :
+with open (os.path.join(current_directory, 'files/picture.jpg'),'wb') as f :
     f.write(listeBDD[1])
 ui.button.setText("Like : "+str(listeBDD[2]))
 ui.button_2.setText("Dislike : "+str(listeBDD[3]))
@@ -836,7 +836,7 @@ ui.button_3.setText("OK : "+str(listeBDD[4]))
 ui.button_4.setText("Saves : "+str(listeBDD[5]))
 ui.button_5.setText("Points : "+str(listeBDD[6]))
 
-pixmap = QPixmap(os.path.join(current_directory, 'Files/picture.jpg'))
+pixmap = QPixmap(os.path.join(current_directory, 'files/picture.jpg'))
 ui.photo.setPixmap(pixmap)   
     
 if user=="":
