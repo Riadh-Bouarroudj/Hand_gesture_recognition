@@ -7,7 +7,7 @@ I initially implemented a basic solution using classical machine learning techni
 # Structure and important details
 - The files "Classic_Techniques.ipynb" and "Deep_Learning_Techniques.ipynb" contain the source code used for constructing, training, and evaluating the classic and deep learning techniques using Google Collab.
 - To enhance user experience, I added the "Virtual_museum.py" file which provides a user interface representing a virtual museum. Here, users can navigate through the museum and perform the seven hand gestures by either passing videos or using an embedded camera, ideally positioned around the shoulder area.
-- It's important to note that the "files" folder contains all necessary resources, including model weights, the user interface, the database, etc. To connect to an already created user, use admin admin.
+- It's important to note that the "files" folder contains all necessary resources, including model weights, the user interface, the database, etc. To connect to an already created user, use username:admin and password:admin.
 
 # Data citation 
 If you find this code useful for your scientific research, please cite the following papers associated with this code:
